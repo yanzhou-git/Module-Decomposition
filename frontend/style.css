@@ -1,163 +1,83 @@
-/* RESET */
+/* Reset & base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* BODY */
 body {
   min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  font-family: Georgia, serif;
-
-  background: #f2f2f2;
+  justify-content: center;
+  color: #333;
 }
 
-/* MAIN CONTAINER */
+/* Main container */
 .container {
-  width: 90%;
-  max-width: 900px;
-  padding: 50px;
-
-  border-radius: 30px;
-
-  background: linear-gradient(
-    135deg,
-    #f8c6d8,
-    #d7c5f7,
-    #9fd3ff
-  );
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* GLASS CARD */
-.quote-box {
-  background: rgba(255, 255, 255, 0.45);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-
-  border-radius: 25px;
-
-  padding: 80px 50px;
-
+  width: 100%;
+  max-width: 60rem;
+  padding: 20px;
   text-align: center;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* TITLE */
+/* Title */
 .title {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 1rem;
-  margin-bottom: 50px;
-
-  background: linear-gradient(
-    90deg,
-    #ff66c4,
-    #8a2be2
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* QUOTE */
-#quote {
   font-size: 2rem;
-  line-height: 1.6;
-  font-style: italic;
-  color: #3d2157;
-
-  margin-bottom: 30px;
-
-  position: relative;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
 }
 
-/* QUOTE MARKS */
-#quote::before {
-  content: "❝";
-  display: block;
+/* Quote card */
+.quote-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
 
-  font-size: 4rem;
-  color: rgba(186, 110, 255, 0.4);
+.quote-card:hover {
+  transform: translateY(-5px);
+}
 
+/* Quote text */
+#quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* AUTHOR */
+/* Author */
 #author {
-  font-size: 1.2rem;
-  color: #6b4a7d;
-
-  margin-bottom: 50px;
-}
-
-#author::before {
-  content: "— ";
-}
-
-/* BUTTON */
-#btn {
-  border: none;
-  outline: none;
-
-  padding: 15px 35px;
-
-  border-radius: 12px;
-
   font-size: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 25px;
+}
 
+/* Button */
+#new-quote-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
   cursor: pointer;
-
-  color: #222;
-
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #e9d5ff
-  );
-
-  box-shadow:
-    0 8px 20px rgba(180, 120, 255, 0.25);
-
   transition: all 0.3s ease;
 }
 
-/* BUTTON HOVER */
-#btn:hover {
-  transform: translateY(-3px) scale(1.03);
-
-  box-shadow:
-    0 12px 25px rgba(180, 120, 255, 0.4);
+#new-quote:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
-/* BUTTON CLICK */
-#btn:active {
+#new-quote:active {
   transform: scale(0.98);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .quote-box {
-    padding: 50px 25px;
-  }
-
-  #quote {
-    font-size: 1.5rem;
-  }
-
-  #btn {
-    width: 100%;
-  }
 }

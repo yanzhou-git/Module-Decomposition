@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote generator app</title>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Quote Generator</title>
-
-</head>
-
-<body>
-    <main class="container">
-        <section class="quote-box">
-            <h1 class="title">Quote Generator</h1>
-
-            <blockquote id="quote">
-                “Click the button to generate a quote.”
-            </blockquote>
-
-            <p id="author"></p>
-
-            <button id="btn" type="button">
-                New Quote
-            </button>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Quote Generator App</h1>
+      <div class="quote-card">
+        <p id="quote"></p>
+        <p id="author"></p>
+        <button type="button" id="new-quote-btn">New quote</button>
+      </div>
+    </div>
+    
+  </body>
 </html>

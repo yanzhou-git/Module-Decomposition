@@ -1,17 +1,34 @@
-const quoteSpace = document.getElementById("quote");
-const authorSpace = document.getElementById("author");
-const btn = document.getElementById("btn");
+const quoteElement = document.getElementById("quote");
+const authorElement = document.getElementById("author");
+const button = document.getElementById("new-quote-btn");
 
 async function fetchQuote() {
   try {
-    const response = await fetch("/api/quote");
+    const response = await fetch(
+      "http://vbtbsb14kscgr1wqsjrzdwo3.178.105.39.91.sslip.io/",
+    );
+
     const data = await response.json();
-    quoteSpace.textContent = data.quote;
-    authorSpace.textContent = "- " + data.author;
+
+    quoteElement.textContent = `"${data.quote}"`;
+    authorElement.textContent = `- ${data.author}`;
+
+    return data;
   } catch (error) {
-    quoteSpace.textContent = "Failed to fetch quote";
+    console.error(error);
+
+    quoteElement.textContent = "Failed to load quote.";
+    authorElement.textContent = "";
   }
 }
 
-btn.addEventListener("click", fetchQuote);
-fetchQuote();
+// Button click
+button.addEventListener("click", fetchQuote);
+
+// Initial load
+async function loadQuotes() {
+  const quotes = await fetchQuote();
+  console.log(quotes);
+}
+
+loadQuotes();
